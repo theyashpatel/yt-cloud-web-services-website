@@ -5,6 +5,7 @@ import {
   FaFacebook,
   FaTwitch,
   FaLinkedinIn,
+  FaTwitter,
 } from "react-icons/fa";
 
 import GreenBtn from "./GreenBtn";
@@ -58,22 +59,70 @@ const Navbar = () => {
 
         {/* burger icon  */}
         <div className="md:hidden">
-          <div className="cursor-pointer">
+          <div onClick={() => setNavigation(true)} className="cursor-pointer">
             <FaBars size={30} />
           </div>
         </div>
+      </div>
 
-        {/* mobile menu  */}
-        <div className="md:hidden fixed left-0 top-0 w-full h-full bg-gray-900/70 backdrop-blur">
-          <div className="fixed left-0 top-0 w-4/5 h-full bg-gray-900 text-white p-10 ease-in duration-300">
-            <div>
-              <div className="flex w-full items-center justify-between">
-                <h2 className="text-3xl font-bold capitalize cursor-pointer">
-                  onnn
-                </h2>
-                <div className="p-3 cursor-pointer">
-                  <FaTimes size={30} />
-                </div>
+      {/* mobile menu  */}
+      <div
+        className={
+          navigation
+            ? "md:hidden fixed left-0 top-0 w-full h-full bg-gray-900/70 backdrop-blur"
+            : ""
+        }
+      >
+        <div
+          className={
+            navigation
+              ? "fixed left-0 top-0 w-4/5 h-full bg-gray-900 text-white p-10 ease-in duration-500"
+              : "fixed top-0 left-[-100%] h-full p-10 duration-500 ease-in"
+          }
+        >
+          <div>
+            <div className="flex w-full items-center justify-between">
+              <h2
+                onClick={() => setNavigation(false)}
+                className="text-3xl font-bold capitalize cursor-pointer"
+              >
+                onnn
+              </h2>
+              <div
+                onClick={() => setNavigation(false)}
+                className="p-3 cursor-pointer"
+              >
+                <FaTimes size={30} />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-24 flex flex-col h-fit gap-12">
+            <GreenBtn className="px-9 py-3 capitalize" title="sign in" />
+
+            <ul className="capitalize">
+              {links.map(({ id, link }) => (
+                <li
+                  key={id}
+                  className=" py-4 text-2xl tracking-wider cursor-pointer"
+                >
+                  {link}
+                </li>
+              ))}
+            </ul>
+
+            <div className="grid grid-cols-2 mx-auto w-4/5 gap-10">
+              <div className="flex items-center justify-center rounded-md shadow-md shadow-lightColor p-3 cursor-pointer">
+                <FaFacebook size={25} />
+              </div>
+              <div className="flex items-center justify-center rounded-md shadow-md shadow-lightColor p-3 cursor-pointer">
+                <FaTwitter size={25} />
+              </div>
+              <div className="flex items-center justify-center rounded-md shadow-md shadow-lightColor p-3 cursor-pointer">
+                <FaLinkedinIn size={25} />
+              </div>
+              <div className="flex items-center justify-center rounded-md shadow-md shadow-lightColor p-3 cursor-pointer">
+                <FaTwitch size={25} />
               </div>
             </div>
           </div>
