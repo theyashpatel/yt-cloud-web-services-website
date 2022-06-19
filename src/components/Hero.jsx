@@ -8,7 +8,7 @@ const Hero = () => {
       name="home"
       className="flex flex-col justify-between w-full h-screen bg-gray-900 text-white text-center md:text-left"
     >
-      <div className="grid md:grid-cols-2 max-w-screen-xl mx-auto px-3">
+      <div className="grid md:grid-cols-2 max-w-screen-xl m-auto px-3">
         <div className="flex flex-col justify-center md:items-start w-full px-2 py-8">
           <p className="text-2xl text-gray-500">
             Cheapest Hosting on Planet Earth
