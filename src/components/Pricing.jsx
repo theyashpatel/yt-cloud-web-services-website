@@ -1,7 +1,5 @@
 import React from "react";
 
-import { FaPlusCircle } from "react-icons/fa";
-import GreenBtn from "./GreenBtn";
 import PriceCard from "./PriceCard";
 
 const Pricing = () => {
